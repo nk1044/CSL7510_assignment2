@@ -23,6 +23,15 @@ app.get("/api/info", (req, res) => {
     });
 });
 
+// CPU intensive endpoint (for autoscaling demo)
+app.get("/cpu", (req, res) => {
+    const end = Date.now() + 15000; // 15 seconds
+    while (Date.now() < end) {
+        Math.sqrt(Math.random());
+    }
+    res.send("CPU load generated");
+});
+
 // health check endpoint (for load balancer)
 app.get("/health", (req, res) => {
     res.status(200).send("OK");
