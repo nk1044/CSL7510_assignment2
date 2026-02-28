@@ -13,3 +13,8 @@ coverage/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+*.iml
